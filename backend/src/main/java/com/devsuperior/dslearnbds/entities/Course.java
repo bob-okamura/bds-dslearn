@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,20 +22,20 @@ public class Course implements Serializable{
 	private Long id;
 	private String name;
 	private String imgUri;
-	private String grayUri;
+	private String imgGrayUri;
 	
 	
-	
-	//private List<Offer> offers = new ArrayList<>();
+	@OneToMany(mappedBy = "course")
+	private List<Offer> offers = new ArrayList<>();
 	
 	public Course() {
 	}
 
-	public Course(Long id, String name, String imgUri, String grayUri) {
+	public Course(Long id, String name, String imgUri, String imgGrayUri) {
 		this.id = id;
 		this.name = name;
 		this.imgUri = imgUri;
-		this.grayUri = grayUri;
+		this.imgGrayUri = imgGrayUri;
 	}
 
 	public Long getId() {
@@ -61,17 +62,17 @@ public class Course implements Serializable{
 		this.imgUri = imgUri;
 	}
 
-	public String getGrayUri() {
-		return grayUri;
+	public String getImgGrayUri() {
+		return imgGrayUri;
 	}
 
-	public void setGrayUri(String grayUri) {
-		this.grayUri = grayUri;
+	public void setImgGrayUri(String imgGrayUri) {
+		this.imgGrayUri = imgGrayUri;
 	}
 	
-	/*public List<Offer> getOffers() {
+	public List<Offer> getOffers() {
 		return offers;
-	}*/
+	}
 
 	@Override
 	public int hashCode() {

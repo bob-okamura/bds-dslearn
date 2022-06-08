@@ -21,4 +21,7 @@ INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('2.0
 
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Notificação para encher linguiça', TIMESTAMP WITH TIME ZONE '2020-07-13T13:00:00Z', false, 'blábláblá', 2);
 
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha Sales', 'Trilha principal do curso', 1, 'https://pix4free.org/assets/library/2021-05-25/originals/sales_manager.jpg', 1, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas dúvidas', 2, 'https://pix4free.org/assets/library/2021-05-25/originals/sales_manager.jpg', 2, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para alunos', 3, 'https://pix4free.org/assets/library/2021-05-25/originals/sales_manager.jpg', 0, 1);
 

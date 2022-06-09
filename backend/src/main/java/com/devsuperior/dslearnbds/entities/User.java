@@ -150,5 +150,14 @@ public class User implements UserDetails, Serializable{
 	public String getPassword() {
 		return password;
 	}
+	
+	public boolean hasRole(String roleName) {
+		for(Role role : roles) {
+			if(role.getAuthority().equals(roleName)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
